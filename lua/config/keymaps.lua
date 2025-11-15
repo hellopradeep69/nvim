@@ -64,6 +64,11 @@ map("i", "<C-l>", "<ESC>A", {})
 map("n", "<leader>r", ":%s/", { desc = "Search and Replace" })
 map("n", "<leader>ba", ":enew<CR>", { desc = " New Buffer" })
 
+-- Treej
 map("n", "<leader>k", require("treesj").toggle, { desc = "Open bracket" })
 
+-- qucik term
 map("n", "<C-t>", ":!", { desc = "Quickie term" })
+
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")

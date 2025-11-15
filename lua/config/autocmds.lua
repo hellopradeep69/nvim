@@ -5,6 +5,8 @@ local function augroup(name)
 	return vim.api.nvim_create_augroup("hello_" .. name, { clear = true })
 end
 
+local vim = vim
+
 -- disalbe commenting next line
 vim.api.nvim_create_autocmd("FileType", {
 	group = augroup("disable_comment"),
