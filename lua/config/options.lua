@@ -1,23 +1,43 @@
 vim.g.have_nerd_font = false
+
 -- Make line numbers default
 vim.o.number = true
 vim.o.relativenumber = true
 
+-- border design
+vim.opt.winborder = "rounded"
+
+-- ruler
+vim.o.ruler = true
+
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = ""
 
+-- syntax
+vim.cmd("syntax on")
+
 -- Don't show the mode, since it's already in the status line
 vim.o.showmode = false
+vim.o.showcmd = true
 
-vim.schedule(function()
-	vim.o.clipboard = "unnamedplus"
-end)
+--cmdheight
+vim.opt.cmdheight = 1
 
 -- Enable break indent
 vim.o.breakindent = true
 
 -- Save undo history
-vim.o.undofile = true
+vim.opt.swapfile = false
+vim.opt.undofile = true
+vim.opt.undolevels = 10000
+
+-- indent
+vim.cmd([[filetype plugin indent on]])
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.o.ignorecase = true
@@ -34,14 +54,18 @@ vim.o.updatetime = 250
 -- Decrease mapped sequence wait time
 vim.o.timeoutlen = 300
 
--- Configure how new splits should be opened
-vim.o.splitright = true
-vim.o.splitbelow = true
-
 vim.o.list = true
 
+vim.opt.listchars = {
+	tab = "  ", -- default tab symbol
+	trail = "-", -- default trailing space symbol
+	extends = ">", -- when line extends
+	precedes = "<", -- when text precedes screen
+	eol = " ", -- end-of-line symbol
+}
+
 -- Preview substitutions live, as you type!
-vim.o.inccommand = "split"
+vim.o.inccommand = "nosplit"
 
 -- Show which line your cursor is on
 vim.o.cursorline = true
@@ -54,8 +78,8 @@ vim.o.confirm = true
 vim.opt.colorcolumn = "85"
 
 --By nerdtreee
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+-- vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
@@ -70,10 +94,9 @@ vim.opt.fillchars = {
 	eob = " ",
 }
 
---cmdheight
-vim.opt.cmdheight = 0
-
 --disable barbar
 vim.g.barbar_auto_setup = false
 
-vim.opt.winborder = "rounded"
+-- status Line
+vim.opt.statusline = "[%n] %<%t %y %h%w%m%r%=%-14.(%l,%c%V%) %P "
+-- vim.cmd(":hi statusline guibg=NONE")

@@ -41,6 +41,9 @@ map("n", "<leader>bb", "<Cmd>BufferMovePrevious<CR>", { desc = "Move buffer left
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
+-- Better J
+map("n", "J", "mzJ`z")
+
 -- Qucikfix
 map("n", "[q", vim.cmd.cprev, { desc = "Previous Quickfix" })
 map("n", "]q", vim.cmd.cnext, { desc = "Next Quickfix" })
@@ -56,7 +59,8 @@ map("v", "x", '"_x', opts)
 map("n", "<C-d>", "<C-d>zz", opts)
 map("n", "<C-u>", "<C-u>zz", opts)
 
-map("n", "<ESC>", ":nohlsearch<CR>", { desc = "clear search highlight" })
+-- map("n", "<ESC>", ":nohlsearch<CR>", { desc = "clear search highlight" })
+map("n", "<ESC>", " <Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR> ", { desc = "clear search highlight" })
 
 map("i", "<C-l>", "<ESC>A", {})
 
@@ -70,5 +74,16 @@ map("n", "<leader>k", require("treesj").toggle, { desc = "Open bracket" })
 -- qucik term
 map("n", "<C-t>", ":!", { desc = "Quickie term" })
 
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+-- continue search
+map("n", "n", "nzzzv")
+map("n", "N", "Nzzzv")
+
+-- Run code
+map("n", "<leader>R", ":sil ! ~/.local/bin/topen.sh code %<CR>", { desc = "Run", silent = true })
+
+map(
+	"n",
+	"<leader>ur",
+	"<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>",
+	{ desc = "Redraw / Clear hlsearch / Diff Update" }
+)
