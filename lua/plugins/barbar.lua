@@ -6,7 +6,7 @@ return {
 		end,
 		opts = {
 			animation = false,
-			-- insert_at_end = true, -- new buffers go to end
+			insert_at_end = true, -- new buffers go to end
 			maximum_padding = 1, -- padding around buffer names
 			icons = {
 				button = " ",
@@ -16,6 +16,20 @@ return {
 				modified = { button = "-" },
 			},
 			sidebar_filetypes = {
+				NvimTree = {
+					event = "BufWipeout",
+					-- text = "Tree",
+					text = vim.fn.expand("%:p:h"),
+					align = "left",
+					highlight = "Directory",
+				},
+				fyler = {
+					event = "BufWipeout",
+					-- text = "Tree",
+					text = vim.fn.expand("%:p:h"),
+					align = "left",
+					highlight = "Directory",
+				},
 				undotree = {
 					text = "undotree",
 					align = "center",

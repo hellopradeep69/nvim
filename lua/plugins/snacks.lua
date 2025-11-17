@@ -320,13 +320,13 @@ return {
 			end,
 			desc = "Keymaps",
 		},
-		{
-			"<leader>sl",
-			function()
-				Snacks.picker.loclist()
-			end,
-			desc = "Location List",
-		},
+		-- {
+		-- 	"<leader>sl",
+		-- 	function()
+		-- 		Snacks.picker.loclist()
+		-- 	end,
+		-- 	desc = "Location List",
+		-- },
 		{
 			"<leader>sm",
 			function()

@@ -1,11 +1,12 @@
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
+local fyler = require("fyler")
 
 -- better escape
 map("i", "jj", "<Esc>", { desc = "Escape" })
 
 -- Neotree Open
-map("n", "<leader>e", "<CMD>Neotree filesystem reveal_force_cwd left toggle <CR>", { desc = "Open Neotree" })
+-- map("n", "<leader>e", "<CMD>Neotree filesystem reveal_force_cwd left toggle <CR>", { desc = "Open Neotree" })
 
 -- Better focus window
 map("n", "<leader>o", "<C-w><C-w>", { desc = "Escape" })
@@ -20,6 +21,16 @@ map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "open Lazyvim" })
 --Buffer Delete
 map("n", "<leader>dd", "<cmd>bd<cr>", { desc = "Delete buffer" })
 
+-- Session
+-- Add session
+map("n", "<leader>sa", ":mks! ~/Sessions.vim/", { desc = "Add session" })
+
+-- view session
+map("n", "<leader>sl", ":!ls ~/Sessions.vim/ | nl<cr>:so ~/Sessions.vim/", { desc = "View session" })
+
+-- Del Sessions
+map("n", "<leader>sx", ":!ls -1 ~/Sessions.vim/<cr>:!trash ~/Sessions.vim/", { desc = "Del session" })
+
 -- Break point
 map("i", ",", ",<c-g>u")
 map("i", ".", ".<c-g>u")
@@ -30,6 +41,10 @@ map("n", "L", "<Cmd>BufferPrevious<CR>", { desc = "Previous buffer" })
 map("n", "H", "<Cmd>BufferNext<CR>", { desc = "Next buffer" })
 map("n", "<Tab>", "<Cmd>BufferNext<CR>", { desc = "Next buffer" })
 map("n", "<S-Tab>", "<Cmd>BufferPrevious<CR>", { desc = "Previous buffer" })
+
+-- better buffer navi
+map("n", "L", "<Cmd>bn<CR>", { desc = "Previous buffer" })
+map("n", "H", "<Cmd>bp<CR>", { desc = "Next buffer" })
 
 -- Buffer management
 map("n", "<leader>bc", "<Cmd>BufferClose<CR>", { desc = "Close buffer" })
@@ -87,3 +102,13 @@ map(
 	"<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>",
 	{ desc = "Redraw / Clear hlsearch / Diff Update" }
 )
+
+-- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", ":Lexplore<CR>", { desc = "Open netrw sidebar" })
+
+-- Flyer
+map("n", "<leader>e", function()
+	fyler.toggle({
+		kind = "split_left_most", -- (Optional) Use custom window layout
+	})
+end, { desc = "Flyer" })

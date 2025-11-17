@@ -98,5 +98,10 @@ vim.opt.fillchars = {
 vim.g.barbar_auto_setup = false
 
 -- status Line
-vim.opt.statusline = "[%n] %<%t %y %h%w%m%r%=%-14.(%l,%c%V%) %P "
--- vim.cmd(":hi statusline guibg=NONE")
+vim.o.statusline = "  %f %r %m %= %{&filetype}   %3l:%-2c  %P  "
+
+vim.opt.laststatus = 2
+
+vim.o.showtabline = 2
+
+vim.opt.shortmess:append("W") -- no "written" messages
