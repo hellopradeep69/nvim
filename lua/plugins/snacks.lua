@@ -96,7 +96,7 @@ return {
 			function()
 				Snacks.picker.files()
 			end,
-			desc = "Find Files",
+			desc = "Find Files Too",
 		},
 		{
 			"<leader>fg",
@@ -320,13 +320,13 @@ return {
 			end,
 			desc = "Keymaps",
 		},
-		-- {
-		-- 	"<leader>sl",
-		-- 	function()
-		-- 		Snacks.picker.loclist()
-		-- 	end,
-		-- 	desc = "Location List",
-		-- },
+		{
+			"<leader>sL",
+			function()
+				Snacks.picker.loclist()
+			end,
+			desc = "Location List",
+		},
 		{
 			"<leader>sm",
 			function()

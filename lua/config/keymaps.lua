@@ -112,3 +112,9 @@ map("n", "<leader>e", function()
 		kind = "split_left_most", -- (Optional) Use custom window layout
 	})
 end, { desc = "Flyer" })
+
+map("n", "<leader>bf", function()
+	Snacks.picker.buffers({ current = false, layout = { preview = false, preset = "select" } })
+end, { desc = "Flyer" })
+
+map("n", "<leader>fo", ":find **/", { desc = "Open netrw sidebar" })
