@@ -117,4 +117,9 @@ map("n", "<leader>bf", function()
 	Snacks.picker.buffers({ current = false, layout = { preview = false, preset = "select" } })
 end, { desc = "Flyer" })
 
-map("n", "<leader>fo", ":find **/", { desc = "Open netrw sidebar" })
+map("n", "<leader>fo", ":find **/", { desc = "Find" })
+
+-- Mason
+map("n", "<leader>cm", "<cmd>Mason<cr>", { desc = "Mason" })
+
+map("n", "<leader>a", ":buffers<CR>:buffer<Space>", { desc = "idk" })

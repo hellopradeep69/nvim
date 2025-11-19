@@ -108,18 +108,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 	end,
 })
 
--- Grap will change layout
-local current_style = "relative"
-vim.api.nvim_create_user_command("Grap", function()
-	if current_style == "relative" then
-		current_style = "basename"
-	else
-		current_style = "relative"
-	end
-	require("grapple").setup({ style = current_style })
-	Snacks.notify.info("Grapple:" .. current_style)
-end, {})
-
 -- Restore cursor to file position in previous editing session
 -- TODO dont know if i want it
 vim.api.nvim_create_autocmd("BufReadPost", {
