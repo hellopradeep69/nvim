@@ -133,3 +133,18 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_user_command("Win", function()
 	vim.cmd("sil ! tmux-win.sh")
 end, {})
+
+-- Oil Float
+vim.api.nvim_create_user_command("F", function()
+	require("oil").toggle_float()
+end, {})
+
+-- Auto-save session whenever Vim state changes
+vim.api.nvim_create_autocmd({ "BufAdd", "BufDelete", "BufWritePost", "VimLeavePre" }, {
+	callback = function()
+		local session = vim.v.this_session
+		if session ~= "" then
+			vim.cmd("mksession! " .. session)
+		end
+	end,
+})

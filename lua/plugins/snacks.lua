@@ -27,12 +27,19 @@ return {
 	},
 	keys = {
 		-- Top Pickers & Explorer
+		-- {
+		-- 	"<leader><space>",
+		-- 	function()
+		-- 		Snacks.picker.smart()
+		-- 	end,
+		-- 	desc = "Smart Find Files",
+		-- },
 		{
-			"<leader><space>",
+			"<leader>sr",
 			function()
-				Snacks.picker.smart()
+				Snacks.picker.resume()
 			end,
-			desc = "Smart Find Files",
+			desc = "Resume",
 		},
 		{
 			"<leader>,",
@@ -244,7 +251,7 @@ return {
 			desc = "Search History",
 		},
 		{
-			"<leader>sa",
+			"<leader>sA",
 			function()
 				Snacks.picker.autocmds()
 			end,
@@ -363,7 +370,7 @@ return {
 			desc = "Resume",
 		},
 		{
-			"<leader>su",
+			"<leader>ui",
 			function()
 				Snacks.picker.undo()
 			end,

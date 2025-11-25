@@ -11,9 +11,7 @@ return {
 		hsl_fn = true, -- CSS hsl() and hsla() functions
 		oklch_fn = true, -- CSS oklch() function
 		css = true, -- Enable all CSS *features*:
-		-- names, RGB, RGBA, RRGGBB, RRGGBBAA, AARRGGBB, rgb_fn, hsl_fn, oklch_fn
 		css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn, oklch_fn
-		-- Tailwind colors.  boolean|'normal'|'lsp'|'both'.  True sets to 'normal'
 		tailwind = true,
 	},
 }
