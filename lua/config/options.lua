@@ -57,9 +57,14 @@ vim.opt.expandtab = true
 
 -- Netwr
 vim.g.netrw_keepdir = 0
+vim.g.have_nerd_font = true
+vim.g.netrw_fastbrowse = 2
 
 -- Decrease update time
 vim.o.updatetime = 250
 
 vim.o.wildmenu = true
 vim.o.wildmode = "longest:full,full"
+vim.opt.path:append({ "**" })
+
+

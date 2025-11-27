@@ -1,3 +1,4 @@
+-- return { "nvim-mini/mini.hipatterns", version = "*", opts = {} }
 return {
 	"catgoose/nvim-colorizer.lua",
 	event = "BufReadPre",

@@ -4,7 +4,6 @@ return {
 	cmd = { "ConformInfo" },
 	keys = {
 		{
-			-- Customize or remove this keymap to your liking
 			"<leader>cf",
 			function()
 				require("conform").format({ async = true })
@@ -13,39 +12,16 @@ return {
 			desc = "Format buffer",
 		},
 	},
-	-- This will provide type hinting with LuaLS
-	---@module "conform"
-	---@type conform.setupOpts
 	opts = {
-		-- Define your formatters
 		formatters_by_ft = {
 			lua = { "stylua" },
 			python = { "isort", "black" },
 			javascript = { "prettierd", "prettier", stop_after_first = true },
-			c = { "clang-format" },
-			cpp = { "clang-format" },
-			fish = { "fish_indent" },
-			sh = { "shfmt" },
-			-- python = { "black" },
-			typescript = { "prettier" },
-			-- html = { "prettier" },
-			-- css = { "prettier" },
-			json = { "prettier" },
-			java = { "google-java-format" },
-			kotlin = { "ktlint" },
-			go = { "gofmt" },
-			rust = { "rustfmt" },
-			markdown = { "prettier" },
-			yaml = { "prettier" },
-			toml = { "taplo" },
 		},
-		-- Set default options
 		default_format_opts = {
 			lsp_format = "fallback",
 		},
-		-- Set up format-on-save
 		format_on_save = { timeout_ms = 500 },
-		-- Customize formatters
 		formatters = {
 			shfmt = {
 				append_args = { "-i", "2" },
@@ -53,7 +29,6 @@ return {
 		},
 	},
 	init = function()
-		-- If you want the formatexpr, here is the place to set it
 		vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 	end,
 }

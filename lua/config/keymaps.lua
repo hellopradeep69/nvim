@@ -11,7 +11,7 @@ map("n", "<leader>e", "<cmd>Lex<cr>", { desc = "Open Ex" })
 map("n", "<leader>E", "<cmd>F<cr>", { desc = "Open oil" })
 
 -- Better focus window
-map("n", "<leader>o", "<C-w><C-w>", { desc = "Escape" })
+map("n", "<leader>o", "<C-w><C-w>", { desc = "Tog win" })
 
 --Move it
 map("v", "J", ":m '>+1<CR>gv=gv")
@@ -106,7 +106,8 @@ map("n", "<leader>bf", function()
 	Snacks.picker.buffers({ current = false, layout = { preview = false, preset = "select" } })
 end, { desc = "Buffer" })
 
-map("n", "<leader>fo", ":find **/", { desc = "Find" })
+-- map("n", "<leader>fo", ":find **/", { desc = "Find" })
+map("n", "<leader>fo", ":find ", { desc = "Find" })
 
 -- Mason
 map("n", "<leader>cm", "<cmd>Mason<cr>", { desc = "Mason" })
