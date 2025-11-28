@@ -11,7 +11,7 @@ map("n", "<leader>e", "<cmd>Lex<cr>", { desc = "Open Ex" })
 map("n", "<leader>E", "<cmd>F<cr>", { desc = "Open oil" })
 
 -- Better focus window
-map("n", "<leader>o", "<C-w><C-w>", { desc = "Tog win" })
+map("n", "<leader>o", "<C-w><C-w>", { desc = "Toggle win" })
 
 --Move it
 map("v", "J", ":m '>+1<CR>gv=gv")
@@ -79,8 +79,8 @@ map("i", "<C-l>", "<ESC>A", {})
 map("n", "<leader>r", ":%s/", { desc = "Search and Replace" })
 map("n", "<leader>ba", ":enew<CR>", { desc = " New Buffer" })
 
--- Treej
-map("n", "<leader>k", require("treesj").toggle, { desc = "Open bracket" })
+-- Treej | Later
+-- map("n", "<leader>k", require("treesj").toggle, { desc = "Open bracket" })
 
 -- qucik term
 map("n", "<C-t>", ":!", { desc = "Quickie term" })
