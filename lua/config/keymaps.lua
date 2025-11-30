@@ -113,3 +113,7 @@ map("n", "<leader>fo", ":find ", { desc = "Find" })
 map("n", "<leader>cm", "<cmd>Mason<cr>", { desc = "Mason" })
 
 vim.keymap.set("n", "<leader>bl", ":ls<cr>:bd ", { desc = "list buffer" })
+
+map("n", "<leader>pp", ":!zen %<cr>", { desc = "preview html" })
+
+-- map("n", "<leader>cp", "<cmd>cope<cr>", { desc = "Open cope" })

@@ -8,7 +8,7 @@ return {
 			custom_textobjects = {
 
 				-- Function definition (needs treesitter queries with these captures)
-				F = ai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }),
+				f = ai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }),
 				o = ai.gen_spec.treesitter({
 					a = { "@block.outer", "@conditional.outer", "@loop.outer" },
 					i = { "@block.inner", "@conditional.inner", "@loop.inner" },
