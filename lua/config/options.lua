@@ -47,6 +47,9 @@ vim.o.undolevels = 10000
 vim.o.swapfile = false
 vim.o.breakindent = true
 
+-- Status line
+-- vim.o.statusline = "%<%f %h%m%r%=%{FugitiveStatusline()}    %-14.(%l,%c%V%) %P"
+
 -- Indent
 vim.cmd("filetype plugin indent on")
 vim.o.smartindent = true
@@ -66,5 +69,3 @@ vim.o.updatetime = 250
 vim.o.wildmenu = true
 vim.o.wildmode = "longest:full,full"
 vim.opt.path:append({ "**" })
-
-

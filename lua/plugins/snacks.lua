@@ -34,6 +34,21 @@ return {
 		-- 	end,
 		-- 	desc = "Smart Find Files",
 		-- },
+		-- I changed
+		{
+			"grd",
+			function()
+				Snacks.picker.lsp_definitions()
+			end,
+			desc = "Goto Definition",
+		},
+		{
+			"grD",
+			function()
+				Snacks.picker.lsp_declarations()
+			end,
+			desc = "Goto Declaration",
+		},
 		{
 			"<leader>sr",
 			function()

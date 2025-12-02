@@ -100,7 +100,7 @@ map(
 )
 
 -- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-vim.keymap.set("n", "<leader>pv", ":Lexplore<CR>", { desc = "Open netrw sidebar" })
+vim.keymap.set("n", "<leader>pv", ":F<CR>", { desc = "Oil" })
 
 map("n", "<leader>bf", function()
 	Snacks.picker.buffers({ current = false, layout = { preview = false, preset = "select" } })
@@ -116,4 +116,5 @@ vim.keymap.set("n", "<leader>bl", ":ls<cr>:bd ", { desc = "list buffer" })
 
 map("n", "<leader>pp", ":!zen %<cr>", { desc = "preview html" })
 
--- map("n", "<leader>cp", "<cmd>cope<cr>", { desc = "Open cope" })
+-- Git
+map("n", "<leader>gi", vim.cmd.Git, { desc = "Git fugitive" })
