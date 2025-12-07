@@ -5,7 +5,7 @@ local function augroup(name)
 	return vim.api.nvim_create_augroup("hello_" .. name, { clear = true })
 end
 
-local vim = vim       
+local vim = vim
 
 -- disalbe commenting next line
 vim.api.nvim_create_autocmd("FileType", {
@@ -124,11 +124,11 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 
 -- Trailing
 vim.api.nvim_create_autocmd("BufWritePre", {
-    callback = function()
-        local save_cursor = vim.fn.getpos(".")
-        vim.cmd([[%s/\s\+$//e]])
-        vim.fn.setpos(".", save_cursor)
-    end,
+	callback = function()
+		local save_cursor = vim.fn.getpos(".")
+		vim.cmd([[%s/\s\+$//e]])
+		vim.fn.setpos(".", save_cursor)
+	end,
 })
 
 vim.api.nvim_create_autocmd("FileType", {
@@ -141,7 +141,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_user_command("Win", function()
-	vim.cmd("sil ! tmux-win.sh")
+	vim.cmd("sil ! ~/.local/bin/Win.sh")
 end, {})
 
 -- Oil Float

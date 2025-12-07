@@ -90,7 +90,8 @@ map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
 
 -- Run code
-map("n", "<leader>R", ":sil ! ~/.local/bin/topen.sh code %<CR>", { desc = "Run", silent = true })
+-- map("n", "<leader>R", ":sil ! ~/.local/bin/topen.sh code %<CR>", { desc = "Run", silent = true })
+map("n", "<leader>R", ":sil ! ~/.local/bin/Win.sh -c<CR>", { desc = "Run", silent = true })
 
 map(
 	"n",

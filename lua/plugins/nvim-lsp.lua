@@ -6,13 +6,9 @@ return {
 		"mason-org/mason.nvim",
 	},
 
+	-- lua ls doesnt work now in my setup
+	vim.lsp.config("lua_ls", { cmd = { "/usr/bin/lua-language-server" } }),
+	vim.lsp.enable("lua_ls"),
+
 	vim.diagnostic.config({ virtual_text = true }),
-	-- vim.diagnostic.config({
-	-- 	float = { border = "rounded", source = "if_many", focusable = false },
-	-- 	underline = true,
-	-- 	update_in_insert = false,
-	-- 	severity_sort = true,
-	-- 	virtual_text = { spacing = 4, source = "if_many", prefix = "●" },
-	-- 	signs = {},
-	-- }),
 }
