@@ -83,7 +83,7 @@ map("n", "<leader>ba", ":enew<CR>", { desc = " New Buffer" })
 -- map("n", "<leader>k", require("treesj").toggle, { desc = "Open bracket" })
 
 -- qucik term
-map("n", "<C-t>", ":!", { desc = "Quickie term" })
+map({ "n", "v" }, "<C-t>", ":!", { desc = "Quickie term" })
 
 -- continue search
 map("n", "n", "nzzzv")
