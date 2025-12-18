@@ -18,6 +18,7 @@ return {
 			python = { "isort", "black" },
 			javascript = { "prettierd", "prettier", stop_after_first = true },
 			c = { "clang-format" },
+			cpp = { "clang-format" },
 		},
 		default_format_opts = {
 			lsp_format = "fallback",

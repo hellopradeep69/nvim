@@ -92,6 +92,7 @@ map("n", "N", "Nzzzv")
 -- Run code
 -- map("n", "<leader>R", ":sil ! ~/.local/bin/topen.sh code %<CR>", { desc = "Run", silent = true })
 map("n", "<leader>R", ":sil ! ~/.local/bin/Win.sh -c<CR>", { desc = "Run", silent = true })
+-- map("n", "<leader>R", ":sil make<CR>", { desc = "Run", silent = true })
 
 map(
 	"n",
@@ -119,3 +120,13 @@ map("n", "<leader>pp", ":!zen-browser %<cr>", { desc = "preview html" })
 
 -- Git
 map("n", "<leader>gi", vim.cmd.Git, { desc = "Git fugitive" })
+
+-- escape terminal
+-- map("t", "<esc>", "<c-\\><c-n>", {})
+
+-- run
+-- map("n", "<M-n>", function()
+-- 	vim.cmd("silent make")
+--
+-- 	vim.cmd.cope()
+-- end)
