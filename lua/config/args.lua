@@ -9,22 +9,22 @@ map("n", "<leader>H", "<cmd>$arge %<bar>argded<bar>args<cr>", { desc = "Tag args
 
 map("n", "<C-h>", function()
 	vim.cmd("silent! 1argument")
-	vim.cmd("args")
+	-- vim.cmd("args")
 end)
 
 map("n", "<C-j>", function()
 	vim.cmd("silent! 2argument")
-	vim.cmd("args")
+	-- vim.cmd("args")
 end)
 
 map("n", "<C-k>", function()
 	vim.cmd("silent! 3argument")
-	vim.cmd("args")
+	-- vim.cmd("args")
 end)
 
 map("n", "<C-l>", function()
 	vim.cmd("silent! 4argument")
-	vim.cmd("args")
+	-- vim.cmd("args")
 end)
 
 map("n", "<leader>a", function()
@@ -58,6 +58,13 @@ map("n", "<leader>a", function()
 		vim.api.nvim_buf_delete(buf, { force = true })
 		vim.cmd.e(f)
 	end, { desc = "Go to file under cursor" })
+
+	vim.api.nvim_create_autocmd("BufLeave", {
+		buffer = buf,
+		callback = function()
+			Write()
+		end,
+	})
 
 	map("n", "<esc>", Write, { buffer = buf, desc = "Update arglist" })
 	map("n", "q", Write, { buffer = buf, desc = "Update arglist" })

@@ -119,14 +119,15 @@ vim.keymap.set("n", "<leader>bl", ":ls<cr>:bd ", { desc = "list buffer" })
 map("n", "<leader>pp", ":!zen-browser %<cr>", { desc = "preview html" })
 
 -- Git
-map("n", "<leader>gi", vim.cmd.Git, { desc = "Git fugitive" })
+-- map("n", "<leader>gi", vim.cmd.Git, { desc = "Git fugitive" })
 
 -- escape terminal
 -- map("t", "<esc>", "<c-\\><c-n>", {})
 
 -- run
--- map("n", "<M-n>", function()
--- 	vim.cmd("silent make")
---
--- 	vim.cmd.cope()
--- end)
+map("n", "<M-n>", function()
+	vim.cmd("silent make")
+	vim.cmd.cope()
+end)
+
+map("t", "<c-/>", "<c-\\><c-n>", {})
