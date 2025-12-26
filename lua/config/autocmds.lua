@@ -140,7 +140,7 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
-vim.api.nvim_create_user_command("W", function()
+vim.api.nvim_create_user_command("Win", function()
 	vim.cmd("sil ! ~/.local/bin/Win.sh")
 end, {})
 
