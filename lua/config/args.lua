@@ -2,7 +2,7 @@
 local map = vim.keymap.set
 
 -- List args
-map("n", "<leader>h", "<cmd>args<cr>", { desc = "List args" })
+map("n", "<leader>h", "<cmd>args<bar>argded<cr>", { desc = "List args" })
 
 -- Tag args
 map("n", "<leader>H", "<cmd>$arge %<bar>argded<bar>args<cr>", { desc = "Tag args" })
