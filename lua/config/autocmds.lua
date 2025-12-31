@@ -102,12 +102,12 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 })
 
 -- format using conform.lua when saved
-vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = "*",
-	callback = function(args)
-		require("conform").format({ bufnr = args.buf })
-	end,
-})
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+-- 	pattern = "*",
+-- 	callback = function(args)
+-- 		require("conform").format({ bufnr = args.buf })
+-- 	end,
+-- })
 
 -- Restore cursor to file position in previous editing session
 -- TODO dont know if i want it
