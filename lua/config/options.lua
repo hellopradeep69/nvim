@@ -48,7 +48,8 @@ vim.o.swapfile = false
 vim.o.breakindent = true
 
 -- Status line
-vim.o.statusline = "%<%f %h%m%r%=%{FugitiveStatusline()}    %-14.(%l,%c%V%) %P"
+-- vim.o.statusline = "%<%f %h%m%r%=%{FugitiveStatusline()}    %-14.(%l,%c%V%) %P"
+vim.o.statusline = "%<%f %h%m%r%=%{get(b:,'gitsigns_status','')} %{FugitiveStatusline()}   %-14.(%l,%c%V%) %P "
 
 -- Indent
 vim.cmd("filetype plugin indent on")

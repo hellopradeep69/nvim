@@ -122,12 +122,10 @@ map("n", "<leader>pp", ":sil !zen-browser %<cr>", { desc = "preview html" })
 -- map("n", "<leader>gi", vim.cmd.Git, { desc = "Git fugitive" })
 
 -- escape terminal
--- map("t", "<esc>", "<c-\\><c-n>", {})
+-- map("t", "<c-_>", "<c-\\><c-n>", {})
 
 -- run
 map("n", "<M-n>", function()
 	vim.cmd("silent make")
 	vim.cmd.cope()
 end)
-
-map("t", "<c-/>", "<c-\\><c-n>", {})
