@@ -524,7 +524,8 @@ return {
 		{
 			"<leader>gg",
 			function()
-				Snacks.lazygit()
+				Snacks.terminal.open("tig", {})
+				-- Snacks.lazygit()
 			end,
 			desc = "Lazygit",
 		},
