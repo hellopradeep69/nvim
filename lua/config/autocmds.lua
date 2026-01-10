@@ -163,3 +163,10 @@ vim.api.nvim_create_autocmd({ "BufAdd", "BufDelete", "BufWritePost", "VimLeavePr
 vim.api.nvim_create_user_command("Glog", function()
 	Snacks.terminal.open("tig", {})
 end, {})
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "markdown",
+	callback = function()
+		vim.treesitter.start(0)
+	end,
+})
