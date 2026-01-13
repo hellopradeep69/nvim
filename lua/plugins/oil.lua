@@ -8,6 +8,12 @@ return {
 			["H"] = { "actions.parent", mode = "n" },
 			["P"] = "actions.preview",
 		},
+		columns = {
+			-- "icon",
+			-- "permissions",
+			-- "mtime",
+			"size",
+		},
 	},
 	lazy = false,
 }
