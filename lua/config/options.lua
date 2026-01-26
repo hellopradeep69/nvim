@@ -67,6 +67,7 @@ vim.g.netrw_fastbrowse = 2
 -- Decrease update time
 vim.o.updatetime = 250
 
+-- vim.opt.grepprg = "rg --vimgrep --no-messages --smart-case"
 vim.o.wildmenu = true
 vim.o.wildmode = "longest:full,full"
 vim.opt.path:append({ "**" })
