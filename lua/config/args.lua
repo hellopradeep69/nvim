@@ -68,4 +68,5 @@ map("n", "<leader>a", function()
 
 	map("n", "<esc>", Write, { buffer = buf, desc = "Update arglist" })
 	map("n", "q", Write, { buffer = buf, desc = "Update arglist" })
+	map("n", "<leader>a", Write, { buffer = buf, desc = "Update arglist" })
 end, { desc = "Edit arglist" })
