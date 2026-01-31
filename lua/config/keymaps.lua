@@ -116,8 +116,8 @@ map("n", "<leader>cm", "<cmd>Mason<cr>", { desc = "Mason" })
 
 vim.keymap.set("n", "<leader>bl", ":ls<cr>:bd ", { desc = "list buffer" })
 
--- map("n", "<leader>pp", "<cmd>LivePreview start <cr>", { desc = "preview html" })
-map("n", "<leader>pp", ":sil !zen-browser %<cr>", { desc = "preview html" })
+map("n", "<leader>pp", "<cmd>LivePreview start <cr>", { desc = "preview html" })
+-- map("n", "<leader>pp", ":sil !zen-browser %<cr>", { desc = "preview html" })
 
 -- Git
 -- map("n", "<leader>gi", vim.cmd.Git, { desc = "Git fugitive" })
