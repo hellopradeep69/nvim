@@ -150,11 +150,11 @@ vim.api.nvim_create_user_command("F", function()
 end, {})
 
 -- Auto-save session whenever Vim state changes
-vim.api.nvim_create_autocmd({ "BufAdd", "BufDelete", "BufWritePost", "VimLeavePre" }, {
+vim.api.nvim_create_autocmd({ "BufWritePost", "VimLeavePre" }, {
 	callback = function()
 		local session = vim.v.this_session
 		if session ~= "" then
-			vim.cmd("mksession! " .. session)
+			vim.cmd("silent! mksession! " .. session)
 		end
 	end,
 })
