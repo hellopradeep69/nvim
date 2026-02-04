@@ -53,11 +53,11 @@ map("n", "<leader>a", function()
 		vim.api.nvim_buf_delete(buf, { force = true })
 	end
 
-	map("n", "<CR>", function()
-		local f = vim.fn.getline(".")
-		vim.api.nvim_buf_delete(buf, { force = true })
-		vim.cmd.e(f)
-	end, { desc = "Go to file under cursor" })
+	-- map("n", "<CR>", function()
+	-- 	local f = vim.fn.getline(".")
+	-- 	vim.api.nvim_buf_delete(buf, { force = true })
+	-- 	vim.cmd.e(f)
+	-- end, { desc = "Go to file under cursor" })
 
 	vim.api.nvim_create_autocmd("BufLeave", {
 		buffer = buf,
