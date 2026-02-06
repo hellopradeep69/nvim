@@ -2,7 +2,7 @@ local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 -- better escape
-map("i", "jj", "<Esc>", { desc = "Escape" })
+-- map("i", "jj", "<Esc>", { desc = "Escape" })
 
 -- Lex Open
 map("n", "<leader>e", "<cmd>Lex<cr>", { desc = "Open Ex" })
