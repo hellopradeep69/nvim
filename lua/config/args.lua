@@ -44,7 +44,7 @@ map("n", "<leader>a", function()
 	local to_read = type(arglist) == "table" and arglist or { arglist }
 	vim.api.nvim_buf_set_lines(buf, 0, -1, false, to_read)
 
-	function Write()
+	local function Write()
 		local to_write = vim.api.nvim_buf_get_lines(buf, 0, -1, true)
 		vim.cmd("%argd")
 		pcall(function()
@@ -53,11 +53,11 @@ map("n", "<leader>a", function()
 		vim.api.nvim_buf_delete(buf, { force = true })
 	end
 
-	-- map("n", "<CR>", function()
-	-- 	local f = vim.fn.getline(".")
-	-- 	vim.api.nvim_buf_delete(buf, { force = true })
-	-- 	vim.cmd.e(f)
-	-- end, { desc = "Go to file under cursor" })
+	map("n", "<CR>", function()
+		local f = vim.fn.getline(".")
+		vim.api.nvim_buf_delete(buf, { force = true })
+		vim.cmd.e(f)
+	end, { buffer = buf, desc = "Go to file under cursor" })
 
 	vim.api.nvim_create_autocmd("BufLeave", {
 		buffer = buf,

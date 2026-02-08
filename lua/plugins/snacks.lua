@@ -95,7 +95,7 @@ return {
 		{
 			"<leader>fb",
 			function()
-				Snacks.picker.buffers()
+				Snacks.picker.buffers({ current = false })
 			end,
 			desc = "Buffers",
 		},
