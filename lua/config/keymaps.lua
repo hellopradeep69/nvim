@@ -1,7 +1,7 @@
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
--- better escape | wanna jst use def
+-- better escape || pls change to default
 map("i", "jj", "<Esc>", { desc = "Escape" })
 
 -- Lex Open
