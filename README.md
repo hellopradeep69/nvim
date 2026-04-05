@@ -1,3 +1,6 @@
+> [!NOTE]
+> This Branch Uses Lazy plugin And main branch has been switched to vim.pack()
+
 ### Installation
 
 - Lets get straight to the point **Installation**
