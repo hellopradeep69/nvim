@@ -1,24 +1,26 @@
 -- Plugins
-vim.pack.add({ "https://gitlab.com/motaz-shokry/gruvbox.nvim" })
-vim.pack.add({ "https://github.com/neovim/nvim-lspconfig" })
-vim.pack.add({ "https://github.com/mason-org/mason.nvim" })
-vim.pack.add({ "https://github.com/mason-org/mason-lspconfig.nvim" })
-vim.pack.add({ "https://github.com/folke/lazydev.nvim" })
-vim.pack.add({ "https://github.com/rafamadriz/friendly-snippets" })
-vim.pack.add({ { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.*") } })
-vim.pack.add({ "https://github.com/stevearc/conform.nvim" })
-vim.pack.add({ "https://github.com/lewis6991/gitsigns.nvim" })
-vim.pack.add({ "https://github.com/nvim-mini/mini.ai" })
-vim.pack.add({ "https://github.com/nvim-mini/mini.surround" })
-vim.pack.add({ "https://github.com/nvim-mini/mini.pairs" })
-vim.pack.add({ "https://github.com/nvim-treesitter/nvim-treesitter" })
-vim.pack.add({ "https://github.com/stevearc/oil.nvim" })
-vim.pack.add({ "https://github.com/nvim-tree/nvim-web-devicons" })
-vim.pack.add({ "https://github.com/MeanderingProgrammer/render-markdown.nvim" })
-vim.pack.add({ "https://github.com/tpope/vim-fugitive" })
-vim.pack.add({ "https://github.com/folke/snacks.nvim" })
-vim.pack.add({ "https://github.com/catgoose/nvim-colorizer.lua" })
-vim.pack.add({ "https://github.com/folke/which-key.nvim" })
+vim.pack.add({
+	{ src = "https://gitlab.com/motaz-shokry/gruvbox.nvim" },
+	{ src = "https://github.com/neovim/nvim-lspconfig" },
+	{ src = "https://github.com/mason-org/mason.nvim" },
+	{ src = "https://github.com/mason-org/mason-lspconfig.nvim" },
+	{ src = "https://github.com/folke/lazydev.nvim" },
+	{ src = "https://github.com/rafamadriz/friendly-snippets" },
+	{ src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.*") },
+	{ src = "https://github.com/stevearc/conform.nvim" },
+	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
+	{ src = "https://github.com/nvim-mini/mini.ai" },
+	{ src = "https://github.com/nvim-mini/mini.surround" },
+	{ src = "https://github.com/nvim-mini/mini.pairs" },
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+	{ src = "https://github.com/stevearc/oil.nvim" },
+	{ src = "https://github.com/nvim-tree/nvim-web-devicons" },
+	{ src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
+	{ src = "https://github.com/tpope/vim-fugitive" },
+	{ src = "https://github.com/folke/snacks.nvim" },
+	{ src = "https://github.com/catgoose/nvim-colorizer.lua" },
+	{ src = "https://github.com/folke/which-key.nvim" },
+})
 
 require("config.options")
 require("config.keymap")
