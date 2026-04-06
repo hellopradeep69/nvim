@@ -35,15 +35,6 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
--- make it easier to close man-files when opened inline
-vim.api.nvim_create_autocmd("FileType", {
-	group = augroup("man_unlisted"),
-	pattern = { "man" },
-	callback = function(event)
-		vim.bo[event.buf].buflisted = false
-	end,
-})
-
 -- check if the file has changed or not # TODO not sure if i need it
 vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
 	group = augroup("checktime"),
@@ -51,41 +42,6 @@ vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
 		if vim.o.buftype ~= "nofile" then
 			vim.cmd("checktime")
 		end
-	end,
-})
-
--- close some filetypes with <q>
-vim.api.nvim_create_autocmd("FileType", {
-	group = augroup("close_with_q"),
-	pattern = {
-		"dbout",
-		-- "fugitive",
-		"gitsigns-blame",
-		"grug-far",
-		"help",
-		"lspinfo",
-		"neotest-output",
-		"neotest-output-panel",
-		"neotest-summary",
-		"notify",
-		"qf",
-		"startuptime",
-		"terminal",
-		"tsplayground",
-	},
-
-	callback = function(event)
-		vim.bo[event.buf].buflisted = false
-		vim.schedule(function()
-			vim.keymap.set("n", "q", function()
-				vim.cmd("close")
-				-- pcall(vim.api.nvim_buf_delete, event.buf, { force = true })
-			end, {
-				buffer = event.buf,
-				silent = true,
-				desc = "Quit buffer",
-			})
-		end)
 	end,
 })
 
@@ -100,14 +56,6 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 		vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
 	end,
 })
-
--- format using conform.lua when saved
--- vim.api.nvim_create_autocmd("BufWritePre", {
--- 	pattern = "*",
--- 	callback = function(args)
--- 		require("conform").format({ bufnr = args.buf })
--- 	end,
--- })
 
 -- Restore cursor to file position in previous editing session
 -- TODO dont know if i want it
@@ -140,10 +88,6 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
-vim.api.nvim_create_user_command("Win", function()
-	vim.cmd("sil ! ~/.local/bin/Win.sh")
-end, {})
-
 -- Oil Float
 vim.api.nvim_create_user_command("F", function()
 	require("oil").toggle_float()
@@ -170,3 +114,49 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.treesitter.start(0)
 	end,
 })
+
+-- Lsp progress
+vim.api.nvim_create_autocmd("LspProgress", {
+	buffer = buf,
+	callback = function(ev)
+		local value = ev.data.params.value
+		local client = vim.lsp.get_client_by_id(ev.data.client_id)
+		if not client then
+			return
+		end
+		vim.api.nvim_echo({ { value.message or "done" } }, false, {
+			id = "lsp." .. ev.data.client_id,
+			kind = "progress",
+			source = "vim.lsp",
+			title = "[" .. client.name .. "]" .. value.title,
+			status = value.kind ~= "end" and "running" or "success",
+			percent = value.percentage,
+		})
+	end,
+})
+
+vim.api.nvim_create_user_command("Packclean", function()
+	local active_plugins = {}
+	local unused_plugins = {}
+
+	for _, plugin in ipairs(vim.pack.get()) do
+		active_plugins[plugin.spec.name] = plugin.active
+	end
+
+	for _, plugin in ipairs(vim.pack.get()) do
+		if not active_plugins[plugin.spec.name] then
+			table.insert(unused_plugins, plugin.spec.name)
+		end
+	end
+
+	if #unused_plugins == 0 then
+		print("No unused plugins.")
+		return
+	end
+
+	local choice = vim.fn.confirm("Remove unused plugins?", "&Yes\n&No", 2)
+	if choice == 1 then
+		vim.pack.del(unused_plugins)
+	end
+end
+, {})
