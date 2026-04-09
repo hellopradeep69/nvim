@@ -115,26 +115,6 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
--- Lsp progress
-vim.api.nvim_create_autocmd("LspProgress", {
-	buffer = buf,
-	callback = function(ev)
-		local value = ev.data.params.value
-		local client = vim.lsp.get_client_by_id(ev.data.client_id)
-		if not client then
-			return
-		end
-		vim.api.nvim_echo({ { value.message or "done" } }, false, {
-			id = "lsp." .. ev.data.client_id,
-			kind = "progress",
-			source = "vim.lsp",
-			title = "[" .. client.name .. "]" .. value.title,
-			status = value.kind ~= "end" and "running" or "success",
-			percent = value.percentage,
-		})
-	end,
-})
-
 vim.api.nvim_create_user_command("Packclean", function()
 	local active_plugins = {}
 	local unused_plugins = {}
@@ -154,9 +134,8 @@ vim.api.nvim_create_user_command("Packclean", function()
 		return
 	end
 
-	local choice = vim.fn.confirm("Remove unused plugins?", "&Yes\n&No", 2)
+	local choice = vim.fn.confirm("Remove unused plugins?", "&Yes\n&No", 1)
 	if choice == 1 then
 		vim.pack.del(unused_plugins)
 	end
-end
-, {})
+end, {})

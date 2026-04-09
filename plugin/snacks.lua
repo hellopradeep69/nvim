@@ -14,6 +14,7 @@ require("snacks").setup({
 })
 
 local map = vim.keymap.set
+local Snacks = Snacks
 
 map("n", "<leader>fe", function()
 	Snacks.picker.files()

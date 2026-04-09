@@ -45,13 +45,20 @@ map("v", ">", ">gv")
 -- Better J
 map("n", "J", "mzJ`z")
 
+-- Better yank
 map({ "n", "v", "x" }, "gy", '"+y', { desc = "Yank to clipboard" })
 map({ "n", "v", "x" }, "gp", '"+p', { desc = "paste from clipboard" })
+
+-- Delete word to blackhole
+map({ "n", "v" }, "d", '"_d')
+map({ "n", "v" }, "x", '"_x')
 
 -- better up and down
 map("n", "<C-d>", "<C-d>zz", {})
 map("n", "<C-u>", "<C-u>zz", {})
 
+-- Diagnostic
+map("n", "<leader>xq", vim.diagnostic.setqflist, { desc = "Diagnostic view" })
 -- map("n", "<ESC>", ":nohlsearch<CR>", { desc = "clear search highlight" })
 map("n", "<ESC>", " <Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR> ", { desc = "clear search highlight" })
 
@@ -61,7 +68,6 @@ map("n", "<leader>r", ":%s/", { desc = "Search and Replace" })
 -- continue search
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
-
 
 -- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>pv", ":F<CR>", { desc = "Oil" })
