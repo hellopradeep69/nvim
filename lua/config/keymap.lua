@@ -11,6 +11,8 @@ map({ "n", "v" }, "<C-t>", ":!", { desc = "quick termie" })
 -- Open OIl
 map("n", "<leader>E", "<cmd>F<cr>", { desc = "Open oil" })
 
+map("n", "<leader>ii", "<cmd>Undotree<cr>", { desc = "Open Undotree" })
+
 --Move it
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")

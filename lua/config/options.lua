@@ -1,3 +1,5 @@
+-- Pack add builtin
+vim.cmd("packadd nvim.undotree")
 -- Number
 vim.o.nu = true
 vim.o.rnu = true
@@ -21,7 +23,7 @@ vim.o.winborder = "rounded"
 
 vim.o.fillchars = "eob: "
 
-vim.o.ignorecase = false
+vim.o.ignorecase = true
 vim.o.smartcase = true
 
 vim.o.mouse = ""

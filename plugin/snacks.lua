@@ -137,7 +137,7 @@ map("n", "<leader>s/", function()
 	Snacks.picker.search_history()
 end, { desc = "Search History" })
 
-map("n", "<leader>sa", function()
+map("n", "<leader>sA", function()
 	Snacks.picker.autocmds()
 end, { desc = "Autocmds" })
 
@@ -181,7 +181,7 @@ map("n", "<leader>sk", function()
 	Snacks.picker.keymaps()
 end, { desc = "Keymaps" })
 
-map("n", "<leader>sl", function()
+map("n", "<leader>sL", function()
 	Snacks.picker.loclist()
 end, { desc = "Location List" })
 

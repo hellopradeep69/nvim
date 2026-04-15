@@ -1,4 +1,4 @@
-require('render-markdown').setup({
+require("render-markdown").setup({
 	completions = { lsp = { enabled = true } },
 	code = {
 		sign = false,
