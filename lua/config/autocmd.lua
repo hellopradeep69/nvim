@@ -115,7 +115,7 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
-vim.api.nvim_create_user_command("Packclean", function()
+vim.api.nvim_create_user_command("Pack", function()
 	local active_plugins = {}
 	local unused_plugins = {}
 
@@ -130,6 +130,7 @@ vim.api.nvim_create_user_command("Packclean", function()
 	end
 
 	if #unused_plugins == 0 then
+		vim.pack.update()
 		print("No unused plugins.")
 		return
 	end
@@ -139,3 +140,11 @@ vim.api.nvim_create_user_command("Packclean", function()
 		vim.pack.del(unused_plugins)
 	end
 end, {})
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "qf",
+	callback = function()
+		vim.keymap.set("n", "j", "j<CR><c-w>p", { buffer = true })
+		vim.keymap.set("n", "k", "k<CR><c-w>p", { buffer = true })
+	end,
+})

@@ -45,9 +45,9 @@ map("n", "<leader>fc", function()
 	Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
 end, { desc = "Find Config File" })
 
-map("n", "<leader>ff", function()
-	Snacks.picker.files()
-end, { desc = "Find Files" })
+-- map("n", "<leader>ff", function()
+-- 	Snacks.picker.files()
+-- end, { desc = "Find Files" })
 
 map("n", "<leader>fg", function()
 	Snacks.picker.git_files()

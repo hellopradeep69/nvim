@@ -16,7 +16,7 @@ vim.o.statusline = "%<%f %h%m%r%=%{get(b:,'gitsigns_status','')} %{FugitiveStatu
 
 vim.o.colorcolumn = "85"
 vim.o.cursorline = true
-vim.o.signcolumn = "yes:1"
+vim.o.signcolumn = "yes"
 
 -- Border
 vim.o.winborder = "rounded"

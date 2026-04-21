@@ -17,8 +17,8 @@ map("n", "<leader>ii", "<cmd>Undotree<cr>", { desc = "Open Undotree" })
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
 
---Open Lazy.vim | TODO:
--- map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "open Lazyvim" })
+--Open pack
+map("n", "<leader>l", "<cmd>Pack<cr>", { desc = "open Lazyvim" })
 
 -- Session
 -- Add session
@@ -89,3 +89,9 @@ map("n", "<M-n>", function()
 	vim.cmd("silent make")
 	vim.cmd.cope()
 end)
+
+map("n", "<leader>pc", function()
+	vim.cmd("Packclean")
+end, { desc = "Pack clean" })
+
+vim.keymap.set("n", "<leader>ff", "<cmd>FzfLua<cr>", { desc = "list buffer" })
