@@ -93,5 +93,3 @@ end)
 map("n", "<leader>pc", function()
 	vim.cmd("Packclean")
 end, { desc = "Pack clean" })
-
-vim.keymap.set("n", "<leader>ff", "<cmd>FzfLua<cr>", { desc = "list buffer" })
