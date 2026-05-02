@@ -141,6 +141,7 @@ vim.api.nvim_create_user_command("Pack", function()
 	end
 end, {})
 
+-- Better quickfix
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "qf",
 	callback = function()
@@ -148,3 +149,14 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.keymap.set("n", "k", "k<CR><c-w>p", { buffer = true })
 	end,
 })
+
+vim.api.nvim_create_user_command("W3m", function(opts)
+	local query = opts.args ~= "" and opts.args or ""
+	query = query:gsub(" ", "+")
+	local url = "https://lite.duckduckgo.com/lite/?q=" .. query
+	local buf = vim.api.nvim_create_buf(true, true)
+	vim.api.nvim_win_set_buf(0, buf)
+	vim.fn.jobstart({ "w3m", url }, {
+		term = true,
+	})
+end, { nargs = "*" })

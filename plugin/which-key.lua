@@ -11,8 +11,6 @@ require("which-key").setup({ ---@class wk.Opts
 	show_keys = false, -- show the currently pressed key and its label as a message in the command line
 })
 
-vim.keymap.set("n", "<leader>?",
-	function()
-		require("which-key").show({ global = false })
-	end,
-	{ desc = "(which-key)" })
+vim.keymap.set("n", "<leader>?", function()
+	require("which-key").show({ global = false })
+end, { desc = "(which-key)" })

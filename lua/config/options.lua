@@ -1,5 +1,9 @@
 -- Pack add builtin
 vim.cmd("packadd nvim.undotree")
+vim.cmd("packadd nvim.difftool")
+
+require("vim._core.ui2").enable()
+
 -- Number
 vim.o.nu = true
 vim.o.rnu = true
@@ -7,6 +11,7 @@ vim.o.rnu = true
 vim.o.confirm = true
 
 vim.o.termguicolors = true
+vim.o.splitright = true
 
 vim.o.breakindent = true
 
