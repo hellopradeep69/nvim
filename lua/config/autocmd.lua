@@ -108,10 +108,10 @@ vim.api.nvim_create_user_command("Glog", function()
 	Snacks.terminal.open("tig", {})
 end, {})
 
+-- Treesitter start
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = "markdown",
 	callback = function()
-		vim.treesitter.start(0)
+		pcall(vim.treesitter.start)
 	end,
 })
 

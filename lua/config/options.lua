@@ -37,6 +37,7 @@ vim.o.scrolloff = 8
 
 -- Indent
 vim.cmd("filetype plugin indent on")
+vim.cmd.syntax("on")
 vim.o.shiftwidth = 4
 vim.o.smartindent = true
 vim.o.tabstop = 4
