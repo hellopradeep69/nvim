@@ -18,7 +18,7 @@ mv ~/.local/state/nvim{,.bak}
 mv ~/.cache/nvim{,.bak}
 ```
 
-- or remove your config if you are risky enough
+- or remove your config if you are brave enough
 
 ```bash
 rm -rf ~/.config/nvim

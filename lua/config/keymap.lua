@@ -90,3 +90,6 @@ map("n", "<M-n>", function()
 	vim.cmd("silent make")
 	vim.cmd.cope()
 end)
+
+vim.keymap.set("n", "<leader>gw", "<cmd>diffget //2<CR>", { desc = "Diff Left" })
+vim.keymap.set("n", "<leader>go", "<cmd>diffget //3<CR>", { desc = "Diff right" })
