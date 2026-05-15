@@ -4,14 +4,21 @@ require("mason-lspconfig").setup()
 -- Names must be Mason package names
 -- Auto install this
 local ensure_installed = {
+	"bash-language-server",
 	"black",
 	"clangd",
+	"clang-format",
+	"css-lsp",
+	"html-lsp",
 	"isort",
 	"lua-language-server",
+	"prettier",
+	"prettierd",
 	"pyright",
 	"rust-analyzer",
 	"shfmt",
 	"stylua",
+	"tree-sitter-cli",
 }
 
 local installed_package_names = require("mason-registry").get_installed_package_names()
