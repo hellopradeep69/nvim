@@ -48,7 +48,9 @@ map("v", ">", ">gv")
 map("n", "J", "mzJ`z")
 
 -- Better yank
-map({ "n", "v", "x" }, "gy", '"+y', { desc = "Yank to clipboard" })
+-- map({ "n", "v", "x" }, "gy", '"+y', { desc = "Yank to clipboard" })
+map({ "v", "x" }, "gy", '"+y', { desc = "Yank to clipboard" })
+map({ "n" }, "gy", 'gv"+y', { desc = "Yank to clipboard" })
 map({ "n", "v", "x" }, "gp", '"+p', { desc = "paste from clipboard" })
 map({ "n", "v", "x" }, "gP", '"+P', { desc = "paste from clipboard" })
 
