@@ -115,6 +115,13 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "html" },
+	callback = function()
+		pcall(vim.treesitter.stop)
+	end,
+})
+
 vim.api.nvim_create_user_command("Pack", function()
 	local active_plugins = {}
 	local unused_plugins = {}
