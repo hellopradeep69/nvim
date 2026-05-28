@@ -21,6 +21,7 @@ vim.pack.add({
 	{ src = "https://github.com/catgoose/nvim-colorizer.lua" },
 	{ src = "https://github.com/folke/which-key.nvim" },
 	{ src = "https://github.com/j-hui/fidget.nvim" },
+	-- { src = "https://github.com/theruki/todoage.nvim" },
 })
 
 require("config.options")
