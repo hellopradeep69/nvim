@@ -13,6 +13,8 @@ vim.api.nvim_create_autocmd("PackChanged", {
 require("nvim-treesitter").install({
 	"bash",
 	"c",
+	"cmake",
+	"cpp",
 	"diff",
 	"html",
 	"javascript",
@@ -21,6 +23,7 @@ require("nvim-treesitter").install({
 	"lua",
 	"luadoc",
 	"luap",
+	"make",
 	"markdown",
 	"markdown_inline",
 	"printf",
@@ -29,6 +32,7 @@ require("nvim-treesitter").install({
 	"rust",
 	"regex",
 	"toml",
+	"tmux",
 	"tsx",
 	"typescript",
 	"vim",
@@ -37,4 +41,5 @@ require("nvim-treesitter").install({
 	"yaml",
 	"javascript",
 	"zig",
+	"zsh",
 })
