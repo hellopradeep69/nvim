@@ -20,6 +20,7 @@ require("nvim-treesitter").install({
 	"html_tags",
 	"javascript",
 	"jsdoc",
+	"just",
 	"json",
 	"lua",
 	"luadoc",
