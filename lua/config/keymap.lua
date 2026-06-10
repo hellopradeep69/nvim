@@ -95,3 +95,5 @@ end)
 
 vim.keymap.set("n", "<leader>gw", "<cmd>diffget //2<CR>", { desc = "Diff Left" })
 vim.keymap.set("n", "<leader>go", "<cmd>diffget //3<CR>", { desc = "Diff right" })
+
+vim.keymap.set("n", "<leader>gd", "<cmd>Gvdiff<cr>", { desc = "Git diff" })
