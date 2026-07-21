@@ -21,7 +21,7 @@ map("n", "<leader>fe", function()
 end, { desc = "Find Files Too" })
 
 map("n", "<leader>,", function()
-	Snacks.picker.buffers()
+	Snacks.picker.buffers({ current = false })
 end, { desc = "Buffers" })
 
 map("n", "<leader>/", function()

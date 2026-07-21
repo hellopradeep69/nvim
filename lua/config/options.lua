@@ -1,5 +1,5 @@
 -- Pack add builtin
-vim.cmd("packadd nvim.undotree")
+vim.cmd("packadd nvim.undotree") --you aint that mature
 vim.cmd("packadd nvim.difftool")
 
 require("vim._core.ui2").enable()
