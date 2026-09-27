@@ -166,4 +166,6 @@ vim.api.nvim_create_user_command("W3m", function(opts)
 	vim.fn.jobstart({ "w3m", url }, {
 		term = true,
 	})
+	vim.cmd("set nu")
+	vim.cmd("set rnu")
 end, { nargs = "*" })

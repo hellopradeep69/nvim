@@ -1,3 +1,4 @@
+-- TODO: removing soon
 require("mini.ai").setup({
 	custom_textobjects = {
 		-- Tweak argument textobject
